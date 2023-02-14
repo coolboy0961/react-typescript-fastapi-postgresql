@@ -1,0 +1,687 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Products Second Product Is Selected 1`] = `
+<div>
+  <label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="radio"
+      value="product1"
+    />
+    商品1
+  </label>
+  <label>
+    <input
+      checked={true}
+      onChange={[Function]}
+      type="radio"
+      value="product2"
+    />
+    商品2
+  </label>
+</div>
+`;
+
+exports[`Storyshots Components/Products Single Product 1`] = `
+<div>
+  <label>
+    <input
+      checked={true}
+      onChange={[Function]}
+      type="radio"
+      value="product1"
+    />
+    商品1
+  </label>
+</div>
+`;
+
+exports[`Storyshots Components/Products Three Products 1`] = `
+<div>
+  <label>
+    <input
+      checked={true}
+      onChange={[Function]}
+      type="radio"
+      value="product1"
+    />
+    商品1
+  </label>
+  <label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="radio"
+      value="product2"
+    />
+    商品2
+  </label>
+  <label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="radio"
+      value="product3"
+    />
+    商品3
+  </label>
+</div>
+`;
+
+exports[`Storyshots Components/Products Two Products 1`] = `
+<div>
+  <label>
+    <input
+      checked={true}
+      onChange={[Function]}
+      type="radio"
+      value="product1"
+    />
+    商品1
+  </label>
+  <label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="radio"
+      value="product2"
+    />
+    商品2
+  </label>
+</div>
+`;
+
+exports[`Storyshots Pages/Customer Customerページの手動動作確認 1`] = `
+Array [
+  <h1>
+    顧客情報入力画面
+  </h1>,
+  <label>
+    氏名：
+    <input
+      data-testid="name-input-text"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="text"
+    />
+    <p />
+  </label>,
+  <br />,
+  <label>
+    性別：
+    <select
+      data-testid="sex-pull-down-list"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        ---
+      </option>
+      <option
+        value="male"
+      >
+        男
+      </option>
+      <option
+        value="female"
+      >
+        女
+      </option>
+    </select>
+  </label>,
+  <div>
+    <span>
+      住所
+    </span>
+    <br />
+    <label>
+      郵便番号：
+      <input
+        data-testid="postcode-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <button
+      onClick={[Function]}
+    >
+      住所入力
+    </button>
+    <br />
+    <label>
+      住所1：
+      <input
+        data-testid="address1-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <br />
+    <label>
+      住所2：
+      <input
+        data-testid="address2-input-text"
+        type="text"
+      />
+    </label>
+  </div>,
+  <br />,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;
+
+exports[`Storyshots Pages/Customer 性別のプルダウンリストで[男]を選択してSelectのvalueにBindingされていること 1`] = `
+Array [
+  <h1>
+    顧客情報入力画面
+  </h1>,
+  <label>
+    氏名：
+    <input
+      data-testid="name-input-text"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="text"
+    />
+    <p />
+  </label>,
+  <br />,
+  <label>
+    性別：
+    <select
+      data-testid="sex-pull-down-list"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        ---
+      </option>
+      <option
+        value="male"
+      >
+        男
+      </option>
+      <option
+        value="female"
+      >
+        女
+      </option>
+    </select>
+  </label>,
+  <div>
+    <span>
+      住所
+    </span>
+    <br />
+    <label>
+      郵便番号：
+      <input
+        data-testid="postcode-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <button
+      onClick={[Function]}
+    >
+      住所入力
+    </button>
+    <br />
+    <label>
+      住所1：
+      <input
+        data-testid="address1-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <br />
+    <label>
+      住所2：
+      <input
+        data-testid="address2-input-text"
+        type="text"
+      />
+    </label>
+  </div>,
+  <br />,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;
+
+exports[`Storyshots Pages/Customer 氏名の入力欄に9桁の文字を入力して、次へのボタンをクリックするとエラーメッセージが表示される 1`] = `
+Array [
+  <h1>
+    顧客情報入力画面
+  </h1>,
+  <label>
+    氏名：
+    <input
+      data-testid="name-input-text"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="text"
+    />
+    <p />
+  </label>,
+  <br />,
+  <label>
+    性別：
+    <select
+      data-testid="sex-pull-down-list"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        ---
+      </option>
+      <option
+        value="male"
+      >
+        男
+      </option>
+      <option
+        value="female"
+      >
+        女
+      </option>
+    </select>
+  </label>,
+  <div>
+    <span>
+      住所
+    </span>
+    <br />
+    <label>
+      郵便番号：
+      <input
+        data-testid="postcode-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <button
+      onClick={[Function]}
+    >
+      住所入力
+    </button>
+    <br />
+    <label>
+      住所1：
+      <input
+        data-testid="address1-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <br />
+    <label>
+      住所2：
+      <input
+        data-testid="address2-input-text"
+        type="text"
+      />
+    </label>
+  </div>,
+  <br />,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;
+
+exports[`Storyshots Pages/Customer 氏名の入力欄に入力したデータはvalueにBindingされていること 1`] = `
+Array [
+  <h1>
+    顧客情報入力画面
+  </h1>,
+  <label>
+    氏名：
+    <input
+      data-testid="name-input-text"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="text"
+    />
+    <p />
+  </label>,
+  <br />,
+  <label>
+    性別：
+    <select
+      data-testid="sex-pull-down-list"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        ---
+      </option>
+      <option
+        value="male"
+      >
+        男
+      </option>
+      <option
+        value="female"
+      >
+        女
+      </option>
+    </select>
+  </label>,
+  <div>
+    <span>
+      住所
+    </span>
+    <br />
+    <label>
+      郵便番号：
+      <input
+        data-testid="postcode-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <button
+      onClick={[Function]}
+    >
+      住所入力
+    </button>
+    <br />
+    <label>
+      住所1：
+      <input
+        data-testid="address1-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <br />
+    <label>
+      住所2：
+      <input
+        data-testid="address2-input-text"
+        type="text"
+      />
+    </label>
+  </div>,
+  <br />,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;
+
+exports[`Storyshots Pages/Customer 氏名の入力欄に入力せずに次へのボタンをクリックするとエラーメッセージが表示される 1`] = `
+Array [
+  <h1>
+    顧客情報入力画面
+  </h1>,
+  <label>
+    氏名：
+    <input
+      data-testid="name-input-text"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="text"
+    />
+    <p />
+  </label>,
+  <br />,
+  <label>
+    性別：
+    <select
+      data-testid="sex-pull-down-list"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        ---
+      </option>
+      <option
+        value="male"
+      >
+        男
+      </option>
+      <option
+        value="female"
+      >
+        女
+      </option>
+    </select>
+  </label>,
+  <div>
+    <span>
+      住所
+    </span>
+    <br />
+    <label>
+      郵便番号：
+      <input
+        data-testid="postcode-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <button
+      onClick={[Function]}
+    >
+      住所入力
+    </button>
+    <br />
+    <label>
+      住所1：
+      <input
+        data-testid="address1-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <br />
+    <label>
+      住所2：
+      <input
+        data-testid="address2-input-text"
+        type="text"
+      />
+    </label>
+  </div>,
+  <br />,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;
+
+exports[`Storyshots Pages/Customer 郵便番号を入れて、チェックボタンをクリックすると、住所が「住所1」に入ること 1`] = `
+Array [
+  <h1>
+    顧客情報入力画面
+  </h1>,
+  <label>
+    氏名：
+    <input
+      data-testid="name-input-text"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="text"
+    />
+    <p />
+  </label>,
+  <br />,
+  <label>
+    性別：
+    <select
+      data-testid="sex-pull-down-list"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        ---
+      </option>
+      <option
+        value="male"
+      >
+        男
+      </option>
+      <option
+        value="female"
+      >
+        女
+      </option>
+    </select>
+  </label>,
+  <div>
+    <span>
+      住所
+    </span>
+    <br />
+    <label>
+      郵便番号：
+      <input
+        data-testid="postcode-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <button
+      onClick={[Function]}
+    >
+      住所入力
+    </button>
+    <br />
+    <label>
+      住所1：
+      <input
+        data-testid="address1-input-text"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <br />
+    <label>
+      住所2：
+      <input
+        data-testid="address2-input-text"
+        type="text"
+      />
+    </label>
+  </div>,
+  <br />,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;
+
+exports[`Storyshots Pages/Index Default 1`] = `
+Array [
+  <h1>
+    商品選択画面
+  </h1>,
+  <div>
+    <label>
+      <input
+        checked={true}
+        onChange={[Function]}
+        type="radio"
+        value="product1"
+      />
+      商品1
+    </label>
+    <label>
+      <input
+        checked={false}
+        onChange={[Function]}
+        type="radio"
+        value="product2"
+      />
+      商品2
+    </label>
+  </div>,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;
+
+exports[`Storyshots Pages/ProductSelect Default 1`] = `
+Array [
+  <h1>
+    商品選択画面
+  </h1>,
+  <div>
+    <label>
+      <input
+        checked={true}
+        onChange={[Function]}
+        type="radio"
+        value="product1"
+      />
+      商品1
+    </label>
+    <label>
+      <input
+        checked={false}
+        onChange={[Function]}
+        type="radio"
+        value="product2"
+      />
+      商品2
+    </label>
+  </div>,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;

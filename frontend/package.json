@@ -1,0 +1,80 @@
+{
+  "name": "spa",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
+    "axios": "^1.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.38.0",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.2",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/addon-storyshots": "^6.5.14",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/jest": "^0.0.10",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/test-runner": "^0.9.0",
+    "@storybook/testing-library": "^0.0.13",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.64",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "axios-mock-adapter": "^1.21.2",
+    "babel-loader": "^8.2.5",
+    "jest-junit": "^14.0.1",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --testPathIgnorePatterns=\"Storyshots\"",
+    "test:ci": "npm run test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --watchAll=false --testPathIgnorePatterns=\"Storyshots\"",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test-storybook": "test-storybook",
+    "test-storybook:cross-browser": "test-storybook --browsers chromium firefox webkit",
+    "test-vistual": "react-scripts test Storyshots --watchAll=false",
+    "test-vistual:reset": "react-scripts test Storyshots -u --watchAll=false"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(axios))"
+    ]
+  },
+  "overrides": {
+    "react-test-renderer": "18.1.0"
+  }
+}
