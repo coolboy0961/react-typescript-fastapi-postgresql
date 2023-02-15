@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from backend.src.application.usecases.user_usecase import UserUsecase
+from src.application.usecases.user_usecase import UserUsecase
 
 router = APIRouter()
 

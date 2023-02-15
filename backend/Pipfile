@@ -8,7 +8,7 @@ create-venv = "bash -c \"export PIPENV_VENV_IN_PROJECT=true && pipenv --python 3
 delete-venv = "pipenv --rm"
 sync = "bash -c \"export PIPENV_VENV_IN_PROJECT=true && pipenv sync --dev\""
 start = "uvicorn main:app --reload"
-test = "pytest -s tests/unit-test"
+test = "python -m pytest -s tests/unit-test"
 
 [packages]
 fastapi = "*"

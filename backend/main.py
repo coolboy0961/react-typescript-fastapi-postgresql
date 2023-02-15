@@ -2,8 +2,8 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 import logging
 
-from .src.interface.controllers import items_controller
-from .src.interface.controllers import user_controller
+from src.interface.controllers import items_controller
+from src.interface.controllers import user_controller
 
 logger = logging.getLogger('uvicorn')
 

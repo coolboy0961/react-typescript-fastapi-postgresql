@@ -2,7 +2,7 @@ import pytest
 from fastapi.testclient import TestClient
 from pytest_mock import MockFixture
 
-from backend.src.application.usecases.user_usecase import UserUsecase
+from src.application.usecases.user_usecase import UserUsecase
 
 @pytest.mark.skip(reason="最初に書くテストケースです。usecaseを呼び出す前に書いたテストケースなので、usecaseを呼び出すと失敗してしまう")
 def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと(client: TestClient, mocker: MockFixture):
