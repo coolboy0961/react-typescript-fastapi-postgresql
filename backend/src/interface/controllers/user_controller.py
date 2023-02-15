@@ -1,6 +1,8 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
+from backend.src.application.usecases.user_usecase import UserUsecase
+
 router = APIRouter()
 
 
@@ -13,7 +15,11 @@ class UserRequest(BaseModel):
     cameras: list[Camera]
 
 
+userUsecase = UserUsecase()
+
+
 @router.post("/user")
 def add_user(user_request: UserRequest):
+    userUsecase.register()
     results = {"message": "user and cameras are registered."}
     return results
