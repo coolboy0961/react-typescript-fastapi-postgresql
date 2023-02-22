@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Products from "./Products";
-import { GlobalContextProvider } from "../contexts/GlobalContext";
+import { currentStore, GlobalContextProvider } from "../contexts/GlobalContext";
 import StoreFixture from "../test-utils/StoreFixture";
 
 describe("Products Componentのテスト", () => {
@@ -101,6 +101,39 @@ describe("Products Componentのテスト", () => {
       // Assert
       expect(product1Element).not.toBeChecked();
       expect(product2Element).toBeChecked();
+    });
+
+    test("商品1と商品2がそれぞれ選択された時に正しく状態を更新すること", () => {
+      // Arrange
+      const expectedProdcutCodeWhenClickProduct1 = "product1";
+      const expectedProdcutCodeWhenClickProduct2 = "product2";
+
+      // Act
+      render(
+        <GlobalContextProvider>
+          <Products products={[]} />
+        </GlobalContextProvider>
+      );
+      const product1Element = screen.getByRole("radio", {
+        name: "商品1",
+      });
+      const product2Element = screen.getByRole("radio", {
+        name: "商品2",
+      });
+      userEvent.click(product1Element);
+      const actualProdcutCodeWhenClickProduct1 =
+        currentStore.pages.productSelectPage.selectedProductCode;
+      userEvent.click(product2Element);
+      const actualProdcutCodeWhenClickProduct2 =
+        currentStore.pages.productSelectPage.selectedProductCode;
+
+      // Assert
+      expect(actualProdcutCodeWhenClickProduct1).toBe(
+        expectedProdcutCodeWhenClickProduct1
+      );
+      expect(actualProdcutCodeWhenClickProduct2).toBe(
+        expectedProdcutCodeWhenClickProduct2
+      );
     });
   });
 });

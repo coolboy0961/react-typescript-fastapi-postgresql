@@ -53,22 +53,6 @@ describe("商品選択ページのテスト", () => {
       expect(actualProduct1Element).toBeInTheDocument();
       expect(actualProduct2Element).toBeInTheDocument();
     });
-    xtest("初期ステータスでproduct1が選択されている", () => {
-      // Arrange
-
-      // Act
-      render(
-        <GlobalContextProvider>
-          <ProductSelect />
-        </GlobalContextProvider>
-      );
-      const actualProduct1Element = screen.getByRole("radio", {
-        name: "商品1",
-      });
-
-      // Assert
-      expect(actualProduct1Element).toBeChecked();
-    });
 
     test("次へボタンが存在すること", () => {
       // Arrange
@@ -89,37 +73,7 @@ describe("商品選択ページのテスト", () => {
   });
 
   describe("動的機能のテスト", () => {
-    xtest("商品1と商品2をそれぞれ選択できること", () => {
-      // 商品1を選択できること
-
-      // Arrange
-
-      // Act
-      render(
-        <GlobalContextProvider>
-          <ProductSelect />
-        </GlobalContextProvider>
-      );
-      const product1Element = screen.getByRole("radio", {
-        name: "商品1",
-      });
-      const product2Element = screen.getByRole("radio", {
-        name: "商品2",
-      });
-      userEvent.click(product1Element);
-      // Assert
-      expect(product1Element).toBeChecked();
-
-      // 商品2を選択すると、商品1の選択が外れること
-      // Arrange
-      // Act
-      userEvent.click(product2Element);
-      // Assert
-      expect(product1Element).not.toBeChecked();
-      expect(product2Element).toBeChecked();
-    });
-
-    test("次へのボタンをクリックすると、選択された商品コードがStoreに保存されること", () => {
+    test("次へのボタンをクリックする時に選択された商品コードがStoreに保存されていること", () => {
       // Arrange
       const expected = "product2";
 
