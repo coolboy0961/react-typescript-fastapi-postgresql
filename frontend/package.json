@@ -47,10 +47,10 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test-storybook": "test-storybook",
-    "test-storybook:cross-browser": "test-storybook --browsers chromium firefox webkit",
-    "test-vistual": "react-scripts test Storyshots --watchAll=false",
-    "test-vistual:reset": "react-scripts test Storyshots -u --watchAll=false"
+    "test:storybook": "test-storybook",
+    "test:storybook:cross-browser": "test-storybook --browsers chromium firefox webkit",
+    "test:vistual": "react-scripts test Storyshots --watchAll=false",
+    "test:vistual:reset": "react-scripts test Storyshots -u --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
