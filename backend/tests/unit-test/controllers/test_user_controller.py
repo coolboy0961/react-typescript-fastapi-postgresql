@@ -79,10 +79,12 @@ def test_idパラメータが空の場合正しいエラーレスポンスを返
     # Arrange
     expected_status_code = 422
     expected_response = {
-        'detail': [{
-            'loc': ['body', 'id'],
-            'msg': 'field required',
-            'type': 'value_error.missing'}]
+        "error_code": "SP422001",
+        "message": "APIリクエストのパラメータチェックが失敗しました.",
+        "detail": [{
+            "loc": ["body", "id"],
+            "msg": "field required",
+            "type": "value_error.missing"}]
     }
     user_usecase_mock = mocker.patch.object(UserUsecase, "register")
 
@@ -97,6 +99,7 @@ def test_idパラメータが空の場合正しいエラーレスポンスを返
     })
     actual_status_code = response.status_code
     acture_response = response.json()
+    print(acture_response)
 
     # Assert
     assert expected_status_code == actual_status_code

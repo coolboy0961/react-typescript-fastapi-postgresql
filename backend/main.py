@@ -1,6 +1,8 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+from fastapi.exceptions import RequestValidationError
 import logging
+from src.exception.ErrorCodes import ErrorCodes
 from src.exception.CustomException import CustomException
 
 from src.interface.controllers import items_controller
@@ -21,6 +23,17 @@ def create_app():
             content={
                 "message": f"予期せぬエラーが発生しました。"
             },
+        )
+
+    @app.exception_handler(RequestValidationError)
+    async def request_validation_exception_handler(request: Request, request_validation_exception: RequestValidationError):
+        return JSONResponse(
+            status_code=422,
+            content={
+                "error_code": ErrorCodes.SP422001().error_code,
+                "message": ErrorCodes.SP422001().message,
+                "detail": request_validation_exception.errors()
+            }
         )
 
     @app.exception_handler(CustomException)
