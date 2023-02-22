@@ -41,8 +41,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --testPathIgnorePatterns=\"Storyshots\"",
-    "test:ci": "npm run test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --watchAll=false --testPathIgnorePatterns=\"Storyshots\"",
+    "test": "npm run test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --watchAll=false --testPathIgnorePatterns=\"Storyshots\"",
+    "test:watch": "react-scripts test --testPathIgnorePatterns=\"Storyshots\"",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
