@@ -12,6 +12,7 @@ class Camera(BaseModel):
 
 
 class UserRequest(BaseModel):
+    id: int
     name: str
     cameras: list[Camera]
 
@@ -21,9 +22,6 @@ userUsecase = UserUsecase()
 
 @router.post("/user")
 def add_user(user_request: UserRequest):
-    if user_request.name == "":
-        raise ErrorCodes.SP400001()
-
     userUsecase.register()
     results = {"message": "user and cameras are registered."}
     return results

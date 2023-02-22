@@ -34,6 +34,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
 
     # Act
     response = client.post("/user", headers={"Content-Type": "application/json"}, json={
+        "id": 1,
         "name": "Tom",
         "cameras": [
             {"id": 1},
@@ -58,6 +59,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
 
     # Act
     response = client.post("/user", headers={"Content-Type": "application/json"}, json={
+        "id": 1,
         "name": "Tom",
         "cameras": [
             {"id": 1},
@@ -73,18 +75,20 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
     user_usecase_mock.assert_called_once()
 
 
-def test_nameパラメータが空の場合正しいエラーレスポンスを返すこと(client: TestClient, mocker: MockFixture):
+def test_idパラメータが空の場合正しいエラーレスポンスを返すこと(client: TestClient, mocker: MockFixture):
     # Arrange
-    expected_status_code = 400
+    expected_status_code = 422
     expected_response = {
-        "error_code": "SP400001",
-        "message": "name should not be empty."
+        'detail': [{
+            'loc': ['body', 'id'],
+            'msg': 'field required',
+            'type': 'value_error.missing'}]
     }
     user_usecase_mock = mocker.patch.object(UserUsecase, "register")
 
     # Act
     response = client.post("/user", headers={"Content-Type": "application/json"}, json={
-        "name": "",
+        "name": "Tom",
         "cameras": [
             {"id": 1},
             {"id": 2},
