@@ -2,6 +2,9 @@ import pytest
 from fastapi.testclient import TestClient
 from pytest_mock import MockFixture
 
+from src.domain.entities.CameraEntity import CameraEntity
+from src.domain.entities.UserEntity import UserEntity
+
 from src.application.usecases.user_usecase import UserUsecase
 
 
@@ -54,7 +57,13 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
     3番目のテストケースとして作成した
     """
     # Arrange
-    expected = {"message": "user and cameras are registered."}
+    expected_response = {"message": "user and cameras are registered."}
+    expected_input_user = UserEntity(1, "Tom")
+    expected_input_cameras = [
+        CameraEntity(1, 0),
+        CameraEntity(2, 0),
+        CameraEntity(3, 0),
+    ]
     user_usecase_mock = mocker.patch.object(UserUsecase, "register")
 
     # Act
@@ -71,8 +80,9 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
 
     # Assert
     assert response.status_code == 200
-    assert actual == expected
-    user_usecase_mock.assert_called_once()
+    assert actual == expected_response
+    user_usecase_mock.assert_called_once_with(
+        expected_input_user, expected_input_cameras)
 
 
 def test_idパラメータが空の場合正しいエラーレスポンスを返すこと(client: TestClient, mocker: MockFixture):
