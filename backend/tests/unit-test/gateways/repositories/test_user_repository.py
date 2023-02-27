@@ -8,8 +8,6 @@ from src.interface.gateways.repositories.models.UserModel import UserModel
 from src.interface.gateways.repositories.UserRepository import UserRepository
 
 
-# @pytest.mark.skip("未完成")
-
 def test_ユーザを登録するリポジトリをコールしてユーザ情報が登録されること(unit_test_db: Session, mocker: MockFixture):
     # Arrange
     excepted_user_model = UserModel(id=1, name="Tom")
