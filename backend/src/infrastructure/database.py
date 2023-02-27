@@ -12,10 +12,10 @@ engine = create_engine(
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
-Base.metadata.create_all(bind=engine)
+
+# https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/
+# https://docs.python.org/3/library/contextlib.html#contextlib.contextmanager
 # Dependency
-
-
 @contextmanager
 def get_db():
     db = SessionLocal()

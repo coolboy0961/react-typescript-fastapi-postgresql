@@ -28,4 +28,4 @@ def test_ユーザと利用するカメラを登録するusecaseをコールし�
 
     # Assert
     user_repository_mock.assert_called_once_with(excepted_user)
-    camera_repository_mock.assert_called_once_with(excepted_cameras)
+    camera_repository_mock.assert_called_once_with(excepted_cameras, excepted_user)
