@@ -8,8 +8,11 @@ from src.exception.CustomException import CustomException
 from src.interface.controllers import items_controller
 from src.interface.controllers import user_controller
 
+from src.infrastructure.database import Base, engine
+
 logger = logging.getLogger('uvicorn')
 
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 

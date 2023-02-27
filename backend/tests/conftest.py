@@ -5,26 +5,13 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from src.infrastructure.database import Base
 from ..main import app
+from src.infrastructure.database import engine
 
 
 @pytest.fixture()
-def unit_test_db() -> Session:
-    # Create the new database session
-    SQLALCHEMY_DATABASE_URL = "sqlite:///./tests/unit-test/test.db"
-    engine = create_engine(SQLALCHEMY_DATABASE_URL)
-    TestingSessionLocal = sessionmaker(
-        autocommit=False, autoflush=False, bind=engine)
-
+def reset_db():
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
-
-    # Create the database
-    db = TestingSessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
 
 @pytest.fixture()
 def client() -> TestClient:

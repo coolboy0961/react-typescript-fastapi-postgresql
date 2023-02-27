@@ -8,4 +8,4 @@ from src.interface.gateways.repositories.UserRepository import UserRepository
 class UserUsecase:
     def register(self, user: UserEntity, cameras: List[CameraEntity]) -> None:
         UserRepository().add(user)
-        CameraRepository.add(cameras)
+        CameraRepository().add(cameras, user)

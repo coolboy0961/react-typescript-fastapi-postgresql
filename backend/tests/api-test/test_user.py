@@ -1,7 +1,7 @@
 import requests
 
 
-def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと():
+def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと(reset_db):
     # Arrange
     expected = {"message": "user and cameras are registered."}
 

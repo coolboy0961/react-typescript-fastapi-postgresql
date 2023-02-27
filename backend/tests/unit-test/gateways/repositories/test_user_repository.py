@@ -1,14 +1,13 @@
 import pytest
 from fastapi.encoders import jsonable_encoder
-from fastapi.testclient import TestClient
 from pytest_mock import MockFixture
-from sqlalchemy.orm import Session
 from src.domain.entities.UserEntity import UserEntity
 from src.interface.gateways.repositories.models.UserModel import UserModel
 from src.interface.gateways.repositories.UserRepository import UserRepository
+from src.infrastructure.database import get_db
 
 
-def test_ユーザを登録するリポジトリをコールしてユーザ情報が登録されること(unit_test_db: Session, mocker: MockFixture):
+def test_ユーザを登録するリポジトリをコールしてユーザ情報が登録されること(reset_db, mocker: MockFixture):
     # Arrange
     excepted_user_model = UserModel(id=1, name="Tom")
 
@@ -16,9 +15,10 @@ def test_ユーザを登録するリポジトリをコールしてユーザ情�
     target = UserRepository()
     user_entity = UserEntity(
         excepted_user_model.id, excepted_user_model.name)
-    target.add(user_entity, unit_test_db)
+    target.add(user_entity)
 
-    actual_user_modal = unit_test_db.query(UserModel).first()
+    with get_db() as db:
+        actual_user_modal = db.query(UserModel).first()
 
     print(jsonable_encoder(actual_user_modal))
 
