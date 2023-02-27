@@ -1,6 +1,8 @@
 import pytest
+from fastapi.encoders import jsonable_encoder
 from fastapi.testclient import TestClient
 from pytest_mock import MockFixture
+from sqlalchemy.orm import Session
 from src.domain.entities.UserEntity import UserEntity
 from src.interface.gateways.repositories.models.UserModel import UserModel
 from src.interface.gateways.repositories.UserRepository import UserRepository
@@ -8,7 +10,7 @@ from src.interface.gateways.repositories.UserRepository import UserRepository
 
 # @pytest.mark.skip("未完成")
 
-def test_ユーザを登録するリポジトリをコールしてユーザ情報が登録されること(unit_test_db, mocker: MockFixture):
+def test_ユーザを登録するリポジトリをコールしてユーザ情報が登録されること(unit_test_db: Session, mocker: MockFixture):
     # Arrange
     excepted_user_model = UserModel(id=1, name="Tom")
 
@@ -20,5 +22,8 @@ def test_ユーザを登録するリポジトリをコールしてユーザ情�
 
     actual_user_modal = unit_test_db.query(UserModel).first()
 
+    print(jsonable_encoder(actual_user_modal))
+
     # Assert
-    assert excepted_user_model.__eq__(actual_user_modal)
+    assert jsonable_encoder(
+        excepted_user_model) == jsonable_encoder(actual_user_modal)

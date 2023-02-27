@@ -1,14 +1,14 @@
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session, sessionmaker
 
 from src.infrastructure.database import Base
 from ..main import app
 
 
 @pytest.fixture()
-def unit_test_db():
+def unit_test_db() -> Session:
     # Create the new database session
     SQLALCHEMY_DATABASE_URL = "sqlite:///./tests/unit-test/test.db"
     engine = create_engine(SQLALCHEMY_DATABASE_URL)
