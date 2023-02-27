@@ -1,4 +1,7 @@
-from src.domain.models.CameraModel import CameraModel
+
+
+
+from src.interface.gateways.repositories.models.CameraModel import CameraModel
 
 
 class CameraRepository:

@@ -1,6 +1,9 @@
-from src.domain.models.UserModel import UserModel
+
+
+
+from src.domain.entities.UserEntity import UserEntity
 
 
 class UserRepository:
-    def add(self, user: UserModel) -> None:
+    def add(self, user: UserEntity) -> None:
         raise NotImplementedError

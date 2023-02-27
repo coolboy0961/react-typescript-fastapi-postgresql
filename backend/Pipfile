@@ -13,6 +13,7 @@ test = "python -m pytest -s tests/unit-test"
 [packages]
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
+sqlalchemy = "*"
 
 [dev-packages]
 autopep8 = "*"
