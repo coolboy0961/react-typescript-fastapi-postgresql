@@ -2,9 +2,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 from contextlib import contextmanager
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./tests/unit-test/test.db"
+from config import get_settings
+
+
+# example:
+# SQLALCHEMY_DATABASE_URL = "sqlite:///./tests/unit-test/test.db"
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./local.db"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+SQLALCHEMY_DATABASE_URL = get_settings().database_url
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}

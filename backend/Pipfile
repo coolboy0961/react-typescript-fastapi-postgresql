@@ -7,15 +7,16 @@ name = "pypi"
 create-venv = "bash -c \"export PIPENV_VENV_IN_PROJECT=true && pipenv --python 3.10\""
 delete-venv = "pipenv --rm"
 sync = "bash -c \"export PIPENV_VENV_IN_PROJECT=true && pipenv sync --dev\""
-start = "uvicorn main:app --reload"
-unit-test = "python -m pytest -s tests/unit-test"
-api-test = "python -m pytest -s tests/api-test"
+start = "bash -c \"export ENVIRONMENT=local && uvicorn main:app --reload\""
+unit-test = "bash -c \"export ENVIRONMENT=unit-test && python -m pytest -s tests/unit-test\""
+api-test = "bash -c \"export ENVIRONMENT=local && python -m pytest -s tests/api-test\""
 
 [packages]
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 sqlalchemy = "*"
 requests = "*"
+python-dotenv = "*"
 
 [dev-packages]
 autopep8 = "*"
