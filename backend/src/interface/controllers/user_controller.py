@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from src.domain.entities.CameraEntity import CameraEntity
 from src.domain.entities.UserEntity import UserEntity
 from src.exception.ErrorCodes import ErrorCodes
-from src.application.usecases.user_usecase import UserUsecase
+from src.application.usecases.UserUsecase import UserUsecase
 
 router = APIRouter()
 

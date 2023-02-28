@@ -6,7 +6,7 @@ from src.exception.ErrorCodes import ErrorCodes
 from src.domain.entities.CameraEntity import CameraEntity
 from src.domain.entities.UserEntity import UserEntity
 
-from src.application.usecases.user_usecase import UserUsecase
+from src.application.usecases.UserUsecase import UserUsecase
 
 
 @pytest.mark.skip(reason="最初に書くテストケースです。usecaseを呼び出す前に書いたテストケースなので、usecaseを呼び出すと失敗してしまう")
