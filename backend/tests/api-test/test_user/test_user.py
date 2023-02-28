@@ -1,10 +1,13 @@
+
+import pytest
 import requests
 from fastapi.encoders import jsonable_encoder
 from src.infrastructure.database import get_db
 from src.interface.gateways.repositories.models.UserModel import UserModel
 from src.interface.gateways.repositories.models.CameraModel import CameraModel
 
-def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと(reset_db):
+@pytest.mark.parametrize("json_server", ["tests/api-test/test_user/external_api_response/camera_ok.json"], indirect=True)
+def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと(json_server, reset_db):
     # Arrange
     expected = {"message": "user and cameras are registered."}
     excepted_user_model = UserModel(id=1, name="Tom")
