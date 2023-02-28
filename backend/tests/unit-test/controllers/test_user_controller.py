@@ -1,6 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 from pytest_mock import MockFixture
+from src.exception.ErrorCodes import ErrorCodes
 
 from src.domain.entities.CameraEntity import CameraEntity
 from src.domain.entities.UserEntity import UserEntity
@@ -90,7 +91,7 @@ def test_idパラメータが空の場合正しいエラーレスポンスを返
     expected_status_code = 422
     expected_response = {
         "error_code": "SP422001",
-        "message": "APIリクエストのパラメータチェックが失敗しました.",
+        "message": "APIリクエストのパラメータチェックが失敗しました。",
         "detail": [{
             "loc": ["body", "id"],
             "msg": "field required",
@@ -109,9 +110,46 @@ def test_idパラメータが空の場合正しいエラーレスポンスを返
     })
     actual_status_code = response.status_code
     acture_response = response.json()
-    print(acture_response)
 
     # Assert
     assert expected_status_code == actual_status_code
     assert expected_response == acture_response
     user_usecase_mock.assert_not_called()
+
+
+def test_ユーザと利用するカメラを登録するAPIをコールして登録しようとするcameraが存在しない時に正しいエラーレスポンスを返すこと(client: TestClient, mocker: MockFixture):
+    # Arrange
+    expected_status_code = 400
+    expected_error_response = {
+        "error_code": "SP400002",
+        "message": "ユーザが利用しようとしているカメラは存在しません。",
+        "detail": {
+            "user_id": 1,
+            "not_found_cameras": [2, 3]
+        }
+    }
+    error = ErrorCodes.SP400002()
+    error.detail = {
+        "user_id": 1,
+        "not_found_cameras": [2, 3]
+    }
+    user_usecase_mock = mocker.patch.object(
+        UserUsecase, "register", side_effect=error)
+
+    # Act
+    response = client.post("/user", headers={"Content-Type": "application/json"}, json={
+        "id": 1,
+        "name": "Tom",
+        "cameras": [
+            {"id": 1},
+            {"id": 2},
+            {"id": 3}
+        ]
+    })
+    actual_status_code = response.status_code
+    acture_response = response.json()
+
+    # Assert
+    assert expected_status_code == actual_status_code
+    assert expected_error_response == acture_response
+    user_usecase_mock.assert_called()

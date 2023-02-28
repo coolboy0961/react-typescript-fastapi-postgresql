@@ -48,7 +48,8 @@ async def custom_exception_handler(request: Request, custom_exception: CustomExc
         status_code=custom_exception.status_code,
         content={
             "error_code": custom_exception.error_code,
-            "message": custom_exception.message
+            "message": custom_exception.message,
+            "detail": custom_exception.detail
         },
     )
 
