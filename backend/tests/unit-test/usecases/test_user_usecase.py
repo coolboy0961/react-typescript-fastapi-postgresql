@@ -52,18 +52,3 @@ def test_ユーザと利用するカメラを登録するusecaseをコールし�
 
     # Assert
     camera_external_api.assert_called_once_with(excepted_cameras)
-
-
-# def test_ユーザと利用するカメラを登録するusecaseをコールして外部システムのAPIをコールしてnot_foundエラーが返ってきた場合正しいエラーをthrowする():
-#     # Arrange
-#     excepted_exception = ErrorCodes.SP400002()
-#     excepted_exception.detail = {
-#         "user_id": 1,
-#         "not_found_cameras": [2, 3]
-#     }
-
-#     # Act
-#     user_repository_mock = mocker.patch.object(UserRepository, "add")
-#     camera_repository_mock = mocker.patch.object(CameraRepository, "add")
-
-#     # Assert

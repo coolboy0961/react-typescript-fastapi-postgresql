@@ -15,4 +15,6 @@ class ExternalApiClient:
         self.base_url = get_settings().base_url
     def get(self, path: str):
         with get_request_session() as requests_session:
-            return requests_session.get(self.base_url + path)
+            response = requests_session.get(self.base_url + path)
+            response.raise_for_status()
+            return response
