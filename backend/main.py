@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 import logging
 from src.exception.ErrorCodes import ErrorCodes
@@ -42,8 +43,7 @@ async def request_validation_exception_handler(request: Request, request_validat
 
 @app.exception_handler(CustomException)
 async def custom_exception_handler(request: Request, custom_exception: CustomException):
-    logger.error("エラーが発生しました。" + str(custom_exception))
-    logger.error("リクエスト：" + str(request))
+    logger.error("エラーが発生しました。" + str(jsonable_encoder(custom_exception)))
     return JSONResponse(
         status_code=custom_exception.status_code,
         content={
