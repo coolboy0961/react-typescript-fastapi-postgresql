@@ -1,7 +1,5 @@
 
 import json
-import time
-import pytest
 import requests
 from fastapi.encoders import jsonable_encoder
 from src.infrastructure.database import get_db
@@ -10,7 +8,7 @@ from src.interface.gateways.repositories.models.CameraModel import CameraModel
 from wiremock.client import Mappings, Mapping, MappingRequest, MappingResponse
 
 
-def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと2(reset_db, wiremock_server):
+def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと(reset_db, wiremock_server):
     # Arrange
     expected = {"message": "user and cameras are registered."}
     excepted_user_model = UserModel(id=1, name="Tom")
