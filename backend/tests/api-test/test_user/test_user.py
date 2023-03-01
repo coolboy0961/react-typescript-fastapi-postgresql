@@ -1,13 +1,16 @@
 
+import json
+import time
 import pytest
 import requests
 from fastapi.encoders import jsonable_encoder
 from src.infrastructure.database import get_db
 from src.interface.gateways.repositories.models.UserModel import UserModel
 from src.interface.gateways.repositories.models.CameraModel import CameraModel
+from wiremock.client import Mappings, Mapping, MappingRequest, MappingResponse
 
-@pytest.mark.parametrize("json_server", ["tests/api-test/test_user/external_api_response/camera_ok.json"], indirect=True)
-def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと(json_server, reset_db):
+
+def test_ユーザと利用するカメラを登録するAPIをコールして正常時のResponseを返すこと2(reset_db, wiremock_server):
     # Arrange
     expected = {"message": "user and cameras are registered."}
     excepted_user_model = UserModel(id=1, name="Tom")
@@ -16,6 +19,30 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
         CameraModel(id=2, user_id=1),
         CameraModel(id=3, user_id=1)
     ]
+    mock_camera_api = Mapping(
+        request=MappingRequest(
+            method="GET",
+            url="/api/camera?ids=1,2,3"
+        ),
+        response=MappingResponse(
+            status=200,
+            body=json.dumps([
+                {
+                    "id": 1,
+                    "count": 35
+                },
+                {
+                    "id": 2,
+                    "count": 67
+                },
+                {
+                    "id": 3,
+                    "count": 19
+                }
+            ])
+        ),
+    )
+    Mappings.create_mapping(mapping=mock_camera_api)
 
     # Act
     response = requests.post("http://localhost:8000/user", headers={"Content-Type": "application/json"}, json={

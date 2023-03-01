@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b0fd3e916d555ec28e958a0fbc165bafd52f816e6f9d633ca7a3941b48363a8f"
+            "sha256": "f337c47be5119f2371e8a05d455a3ed49005d9fa93a5b7df603c38b9b0bf4e29"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -1071,6 +1071,14 @@
             ],
             "version": "==1.5.0"
         },
+        "setuptools": {
+            "hashes": [
+                "sha256:e5fd0a713141a4a105412233c63dc4e17ba0090c8e8334594ac790ec97792330",
+                "sha256:f106dee1b506dee5102cc3f3e9e68137bbad6d47b616be7991714b0c62204251"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==67.4.0"
+        },
         "six": {
             "hashes": [
                 "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
@@ -1102,6 +1110,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5'",
             "version": "==1.26.14"
+        },
+        "wiremock": {
+            "hashes": [
+                "sha256:1356cf04af3108ec5df36ea97110cf517854873196a707b58289bcbbce8fa9c6",
+                "sha256:3364f21262d420ea3fa1c3b8408ac090588fcfa516747b85a5d1073e1509cf84"
+            ],
+            "index": "pypi",
+            "version": "==2.3.1"
         },
         "yarl": {
             "hashes": [
