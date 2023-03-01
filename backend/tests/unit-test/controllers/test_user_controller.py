@@ -124,13 +124,11 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
         "error_code": "SP400002",
         "message": "ユーザが利用しようとしているカメラは存在しません。",
         "detail": {
-            "user_id": 1,
             "not_found_cameras": [2, 3]
         }
     }
     error = ErrorCodes.SP400002()
     error.detail = {
-        "user_id": 1,
         "not_found_cameras": [2, 3]
     }
     user_usecase_mock = mocker.patch.object(
