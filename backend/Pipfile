@@ -24,7 +24,6 @@ pytest = "*"
 httpx = "*"
 pytest-mock = "*"
 requests-mock = "*"
-"json-server.py" = "*"
 wiremock = "*"
 
 [requires]
