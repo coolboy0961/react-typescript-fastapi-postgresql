@@ -21,8 +21,8 @@ def client() -> TestClient:
 
 @pytest.fixture()
 def wiremock_server():
-    server = WireMockServer(port=3000)
-    Config.base_url = 'http://localhost:{}/__admin'.format(server.port)
+    server = WireMockServer(port=3000) # http://localhost:3000
+    Config.base_url = f'http://localhost:{server.port}/__admin' # http://localhost:3000/__admin
     server.start()
     yield
     server.stop()

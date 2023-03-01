@@ -20,7 +20,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
     mock_camera_api = Mapping(
         request=MappingRequest(
             method="GET",
-            url="/api/camera?ids=1,2,3"
+            url="/api/camera?ids=1,2,3" # http://localhost:3000/api/camera?ids=1,2,3
         ),
         response=MappingResponse(
             status=200,
