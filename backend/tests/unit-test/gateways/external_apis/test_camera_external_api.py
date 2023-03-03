@@ -4,6 +4,7 @@ from src.interface.gateways.external_apis.CameraExternalApi import CameraExterna
 from src.domain.entities.CameraEntity import CameraEntity
 from fastapi.encoders import jsonable_encoder
 
+
 def test_CameraExternalApiのgetメソッドでカメラの検知回数を取得できること(requests_mock):
     # Arrange
     expected = [
@@ -33,7 +34,7 @@ def test_CameraExternalApiのgetメソッドでカメラの検知回数を取得
         CameraEntity(2, 0),
         CameraEntity(3, 0)
     ]
-    actual = target.get(input_cameras)
+    actual = target.check_if_exist(input_cameras)
 
     # Assert
     assert requests_mock.call_count == 1
@@ -92,9 +93,10 @@ def test_外部APIからcamera_not_foundのエラーが返ってくる場合正�
             CameraEntity(2, 0),
             CameraEntity(3, 0)
         ]
-        target.get(input_cameras)
+        target.check_if_exist(input_cameras)
     except CustomException as e:
         actual_exception = e
-    
+
     # Assert
-    assert jsonable_encoder(excepted_exception) == jsonable_encoder(actual_exception)
+    assert jsonable_encoder(
+        excepted_exception) == jsonable_encoder(actual_exception)
