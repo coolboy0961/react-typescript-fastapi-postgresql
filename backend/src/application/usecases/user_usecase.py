@@ -3,7 +3,7 @@ from src.domain.entities.CameraEntity import CameraEntity
 from src.domain.entities.UserEntity import UserEntity
 from src.interface.gateways.repositories.CameraRepository import CameraRepository
 from src.interface.gateways.repositories.UserRepository import UserRepository
-from src.interface.gateways.external_apis.CameraExternalApi import CameraExternalApi
+from src.interface.gateways.external_apis.camera_external_api import CameraExternalApi
 
 
 class UserUsecase:
