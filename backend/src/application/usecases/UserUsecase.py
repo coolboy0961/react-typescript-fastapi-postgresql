@@ -7,7 +7,12 @@ from src.interface.gateways.external_apis.CameraExternalApi import CameraExterna
 
 
 class UserUsecase:
+    def __init__(self) -> None:
+        self.camera_external_api = CameraExternalApi()
+        self.user_repository = UserRepository()
+        self.camera_repository = CameraRepository()
+
     def register(self, user: UserEntity, cameras: List[CameraEntity]) -> None:
-        CameraExternalApi().get(cameras)
-        UserRepository().add(user)
-        CameraRepository().add(cameras, user)
+        self.camera_external_api.get(cameras)
+        self.user_repository.add(user)
+        self.camera_repository.add(cameras, user)
