@@ -1,7 +1,7 @@
 from src.exception.CustomException import CustomException
 from src.exception.ErrorCodes import ErrorCodes
 from src.interface.gateways.external_apis.camera_external_api import CameraExternalApi
-from src.domain.entities.CameraEntity import CameraEntity
+from src.domain.entities.camera_entity import CameraEntity
 from fastapi.encoders import jsonable_encoder
 
 

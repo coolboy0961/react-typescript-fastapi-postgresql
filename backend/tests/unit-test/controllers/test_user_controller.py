@@ -3,7 +3,7 @@ from fastapi.testclient import TestClient
 from pytest_mock import MockFixture
 from src.exception.ErrorCodes import ErrorCodes
 
-from src.domain.entities.CameraEntity import CameraEntity
+from src.domain.entities.camera_entity import CameraEntity
 from src.domain.entities.UserEntity import UserEntity
 
 from src.application.usecases.user_usecase import UserUsecase

@@ -1,7 +1,7 @@
 from requests import RequestException
 from src.exception.ErrorCodes import ErrorCodes
 from src.infrastructure.external_api_client import ExternalApiClient
-from src.domain.entities.CameraEntity import CameraEntity
+from src.domain.entities.camera_entity import CameraEntity
 
 
 class CameraExternalApi:
