@@ -1,4 +1,4 @@
-from src.exception.CustomException import CustomException
+from src.exception.custom_exception import CustomException
 from src.exception.ErrorCodes import ErrorCodes
 from src.interface.gateways.external_apis.camera_external_api import CameraExternalApi
 from src.domain.entities.camera_entity import CameraEntity

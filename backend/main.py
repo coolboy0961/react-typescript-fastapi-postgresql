@@ -4,7 +4,7 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 import logging
 from src.exception.ErrorCodes import ErrorCodes
-from src.exception.CustomException import CustomException
+from src.exception.custom_exception import CustomException
 
 from src.interface.controllers import user_controller
 from src.interface.controllers import traffic_controller
