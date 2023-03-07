@@ -10,3 +10,5 @@ class UserRepository:
             db.add(db_user)
             db.commit()
             db.refresh(db_user)
+    def get(self, user_id: int):
+        raise NotImplementedError("This method is not yet implemented.")

@@ -34,7 +34,7 @@ def test_CameraExternalApiのgetメソッドでカメラの検知回数を取得
         CameraEntity(2, 0),
         CameraEntity(3, 0)
     ]
-    actual = target.check_if_exist(input_cameras)
+    actual = target.get(input_cameras)
 
     # Assert
     assert requests_mock.call_count == 1
@@ -93,7 +93,7 @@ def test_外部APIからcamera_not_foundのエラーが返ってくる場合正�
             CameraEntity(2, 0),
             CameraEntity(3, 0)
         ]
-        target.check_if_exist(input_cameras)
+        target.get(input_cameras)
     except CustomException as e:
         actual_exception = e
 

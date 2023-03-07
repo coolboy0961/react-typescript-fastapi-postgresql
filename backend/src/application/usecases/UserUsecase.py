@@ -8,6 +8,6 @@ from src.interface.gateways.external_apis.CameraExternalApi import CameraExterna
 
 class UserUsecase:
     def register(self, user: UserEntity, cameras: List[CameraEntity]) -> None:
-        CameraExternalApi().check_if_exist(cameras)
+        CameraExternalApi().get(cameras)
         UserRepository().add(user)
         CameraRepository().add(cameras, user)

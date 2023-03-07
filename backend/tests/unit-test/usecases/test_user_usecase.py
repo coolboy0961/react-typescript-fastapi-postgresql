@@ -21,7 +21,7 @@ def test_ユーザと利用するカメラを登録するusecaseをコールし�
     ]
     user_repository_mock = mocker.patch.object(UserRepository, "add")
     camera_repository_mock = mocker.patch.object(CameraRepository, "add")
-    mocker.patch.object(CameraExternalApi, "check_if_exist")
+    mocker.patch.object(CameraExternalApi, "get")
 
     # Act
     target = UserUsecase()
@@ -43,7 +43,7 @@ def test_ユーザと利用するカメラを登録するusecaseをコールし�
     ]
     mocker.patch.object(UserRepository, "add")
     mocker.patch.object(CameraRepository, "add")
-    camera_external_api = mocker.patch.object(CameraExternalApi, "check_if_exist")
+    camera_external_api = mocker.patch.object(CameraExternalApi, "get")
 
     # Act
     target = UserUsecase()

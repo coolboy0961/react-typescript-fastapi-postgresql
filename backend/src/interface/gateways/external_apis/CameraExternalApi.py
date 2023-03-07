@@ -5,7 +5,7 @@ from src.domain.entities.CameraEntity import CameraEntity
 
 
 class CameraExternalApi:
-    def check_if_exist(self, cameras: list[CameraEntity]):
+    def get(self, cameras: list[CameraEntity]):
         request_ids = []
         for camera in cameras:
             request_ids.append(str(camera.id))

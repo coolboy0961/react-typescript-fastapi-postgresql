@@ -12,3 +12,6 @@ class CameraRepository:
                 db.add(db_camera)
                 db.commit()
                 db.refresh(db_camera)
+
+    def get(self, user_id: int):
+        raise NotImplementedError("This method is not yet implemented.")
