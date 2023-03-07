@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from src.application.usecases.TrafficUsecase import TrafficUsecase
+from src.application.usecases.traffic_usecase import TrafficUsecase
 
 router = APIRouter(prefix="/api")
 

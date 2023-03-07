@@ -2,7 +2,7 @@ from fastapi.testclient import TestClient
 from pytest_mock import MockFixture
 from src.domain.entities.CameraEntity import CameraEntity
 from src.domain.entities.UserEntity import UserEntity
-from src.application.usecases.TrafficUsecase import TrafficUsecase
+from src.application.usecases.traffic_usecase import TrafficUsecase
 
 
 def test_交通量検索APIを呼び出して正常時のResponseを取得できること(client: TestClient, mocker: MockFixture):

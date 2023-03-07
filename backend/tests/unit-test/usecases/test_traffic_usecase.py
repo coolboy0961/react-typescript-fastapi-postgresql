@@ -4,7 +4,7 @@ from src.domain.entities.UserEntity import UserEntity
 from src.interface.gateways.repositories.CameraRepository import CameraRepository
 from src.interface.gateways.repositories.UserRepository import UserRepository
 from src.interface.gateways.external_apis.CameraExternalApi import CameraExternalApi
-from src.application.usecases.TrafficUsecase import TrafficUsecase
+from src.application.usecases.traffic_usecase import TrafficUsecase
 
 
 def test_TrafficUsecaseからリポジトリを使ってユーザとカメラ情報を取得できること(mocker: MockFixture):
