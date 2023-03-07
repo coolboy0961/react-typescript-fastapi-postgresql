@@ -7,7 +7,7 @@ from src.interface.gateways.repositories.CameraRepository import CameraRepositor
 from src.interface.gateways.repositories.UserRepository import UserRepository
 from src.interface.gateways.external_apis.CameraExternalApi import CameraExternalApi
 
-from src.application.usecases.UserUsecase import UserUsecase
+from src.application.usecases.user_usecase import UserUsecase
 from src.exception.ErrorCodes import ErrorCodes
 
 
