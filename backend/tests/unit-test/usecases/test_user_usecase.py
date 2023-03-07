@@ -1,7 +1,7 @@
 import pytest
 from pytest_mock import MockFixture
 from src.domain.entities.camera_entity import CameraEntity
-from src.domain.entities.UserEntity import UserEntity
+from src.domain.entities.user_entity import UserEntity
 
 from src.interface.gateways.repositories.camera_repository import CameraRepository
 from src.interface.gateways.repositories.user_repository import UserRepository

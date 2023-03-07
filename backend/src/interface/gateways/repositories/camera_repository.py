@@ -1,7 +1,7 @@
 from src.domain.entities.camera_entity import CameraEntity
 from src.infrastructure.database import get_db
 from src.interface.gateways.repositories.models.camera_model import CameraModel
-from src.domain.entities.UserEntity import UserEntity
+from src.domain.entities.user_entity import UserEntity
 
 
 class CameraRepository:

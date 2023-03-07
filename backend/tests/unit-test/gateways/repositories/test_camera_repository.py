@@ -1,6 +1,6 @@
 import pytest
 from src.domain.entities.camera_entity import CameraEntity
-from src.domain.entities.UserEntity import UserEntity
+from src.domain.entities.user_entity import UserEntity
 from src.interface.gateways.repositories.camera_repository import CameraRepository
 from src.interface.gateways.repositories.models.camera_model import CameraModel
 from fastapi.encoders import jsonable_encoder
