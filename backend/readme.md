@@ -38,7 +38,6 @@ pipenv --rm
 │   │   └── database.py
 │   └── interface # Interface Adapters
 │       ├── controllers # 理想はこの部分もFastApiの機能を使わないようにすべきだが、現実的にそうすると、FastApiの便利機能が使えなくなるのでトレードオフが必要
-│       │   ├── items_controller.py
 │       │   └── user_controller.py
 │       └── gateways
 │           ├── external_apis
@@ -56,7 +55,6 @@ pipenv --rm
     ├── conftest.py # pytestの設定ファイル、主にfixtureを定義する場所
     └── unit-test
         ├── controllers
-        │   ├── test_items_controller.py
         │   └── test_user_controller.py
         ├── gateways
         │   ├── external_apis

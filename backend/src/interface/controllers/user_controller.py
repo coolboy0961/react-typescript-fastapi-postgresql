@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from pydantic import BaseModel
 
 from src.domain.entities.CameraEntity import CameraEntity
@@ -6,7 +6,7 @@ from src.domain.entities.UserEntity import UserEntity
 from src.exception.ErrorCodes import ErrorCodes
 from src.application.usecases.UserUsecase import UserUsecase
 
-router = APIRouter()
+router = APIRouter(prefix="/api")
 
 
 class Camera(BaseModel):
@@ -22,7 +22,7 @@ class UserRequest(BaseModel):
 userUsecase = UserUsecase()
 
 
-@router.post("/user")
+@router.post("/v1/users")
 def add_user(user_request: UserRequest):
     userUsecase.register(
         convert_user_request_to_user_entity(user_request),
@@ -41,3 +41,4 @@ def convert_cameras_request_to_camera_entitys(request: list[Camera]):
     for camera_request in request:
         camera_entiies.append(CameraEntity(camera_request.id, 0))
     return camera_entiies
+

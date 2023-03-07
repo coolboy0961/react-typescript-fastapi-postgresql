@@ -6,8 +6,8 @@ import logging
 from src.exception.ErrorCodes import ErrorCodes
 from src.exception.CustomException import CustomException
 
-from src.interface.controllers import items_controller
 from src.interface.controllers import user_controller
+from src.interface.controllers import traffic_controller
 
 from src.infrastructure.database import Base, engine
 
@@ -59,5 +59,5 @@ def read_root():
     return {"Hello": "World"}
 
 
-app.include_router(items_controller.router)
 app.include_router(user_controller.router)
+app.include_router(traffic_controller.router)

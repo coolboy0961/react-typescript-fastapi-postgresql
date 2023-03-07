@@ -15,7 +15,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
     expected = {"message": "user and cameras are registered."}
 
     # Act
-    response = client.post("/user", headers={"Content-Type": "application/json"}, json={
+    response = client.post("/api/v1/api/v1/userss", headers={"Content-Type": "application/json"}, json={
         "name": "Tom",
         "cameras": [
             {"id": 1},
@@ -37,7 +37,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
     user_usecase_mock = mocker.patch.object(UserUsecase, "register")
 
     # Act
-    response = client.post("/user", headers={"Content-Type": "application/json"}, json={
+    response = client.post("/api/v1/users", headers={"Content-Type": "application/json"}, json={
         "id": 1,
         "name": "Tom",
         "cameras": [
@@ -68,7 +68,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
     user_usecase_mock = mocker.patch.object(UserUsecase, "register")
 
     # Act
-    response = client.post("/user", headers={"Content-Type": "application/json"}, json={
+    response = client.post("/api/v1/users", headers={"Content-Type": "application/json"}, json={
         "id": 1,
         "name": "Tom",
         "cameras": [
@@ -100,7 +100,7 @@ def test_idパラメータが空の場合正しいエラーレスポンスを返
     user_usecase_mock = mocker.patch.object(UserUsecase, "register")
 
     # Act
-    response = client.post("/user", headers={"Content-Type": "application/json"}, json={
+    response = client.post("/api/v1/users", headers={"Content-Type": "application/json"}, json={
         "name": "Tom",
         "cameras": [
             {"id": 1},
@@ -135,7 +135,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
         UserUsecase, "register", side_effect=error)
 
     # Act
-    response = client.post("/user", headers={"Content-Type": "application/json"}, json={
+    response = client.post("/api/v1/users", headers={"Content-Type": "application/json"}, json={
         "id": 1,
         "name": "Tom",
         "cameras": [
