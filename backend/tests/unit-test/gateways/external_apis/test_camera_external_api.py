@@ -12,7 +12,7 @@ def test_CameraExternalApiのgetメソッドでカメラの検知回数を取得
         CameraEntity(2, 67),
         CameraEntity(3, 19)
     ]
-    requests_mock.get('http://localhost:1234/api/camera?ids=1,2,3', json=[
+    requests_mock.get('http://localhost:1234/api/v1/camera?ids=1,2,3', json=[
         {
             "id": 1,
             "count": 35
@@ -74,7 +74,7 @@ def test_外部APIからcamera_not_foundのエラーが返ってくる場合正�
         "not_found_cameras": [2, 3]
     }
     requests_mock.get(
-        'http://localhost:1234/api/camera?ids=1,2,3',
+        'http://localhost:1234/api/v1/camera?ids=1,2,3',
         status_code=404,
         json={
             "error_code": "CR000001",

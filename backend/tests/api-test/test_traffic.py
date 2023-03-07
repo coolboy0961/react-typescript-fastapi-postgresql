@@ -29,7 +29,7 @@ def test_交通量検索APIを呼び出して正常時のReponseを取得でき�
     mock_camera_api = Mapping(
         request=MappingRequest(
             method="GET",
-            url="/api/camera?ids=1,2,3"  # http://localhost:3000/api/camera?ids=1,2,3
+            url="/api/v1/camera?ids=1,2,3"  # http://localhost:3000/api/v1/camera?ids=1,2,3
         ),
         response=MappingResponse(
             status=200,

@@ -12,7 +12,7 @@ class CameraExternalApi:
         request_ids_str = ",".join(request_ids)
         try:
             response = ExternalApiClient().get(
-                f"/camera?ids={request_ids_str}")
+                f"/v1/camera?ids={request_ids_str}")
         except RequestException as e:
             error_response = e.response.json()
             if (error_response["error_code"] == "CR000001"):
