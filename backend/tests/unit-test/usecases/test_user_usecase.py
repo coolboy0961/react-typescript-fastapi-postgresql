@@ -8,7 +8,7 @@ from src.interface.gateways.repositories.user_repository import UserRepository
 from src.interface.gateways.external_apis.camera_external_api import CameraExternalApi
 
 from src.application.usecases.user_usecase import UserUsecase
-from src.exception.ErrorCodes import ErrorCodes
+from src.exception.error_codes import ErrorCodes
 
 
 def test_ユーザと利用するカメラを登録するusecaseをコールして登録用リポジトリが呼び出されること(mocker: MockFixture):
