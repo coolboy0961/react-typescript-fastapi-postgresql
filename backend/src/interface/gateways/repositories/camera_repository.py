@@ -1,3 +1,4 @@
+from typing import List
 from src.domain.entities.camera_entity import CameraEntity
 from src.infrastructure.database import get_db
 from src.interface.gateways.repositories.models.camera_model import CameraModel
@@ -13,5 +14,6 @@ class CameraRepository:
                 db.commit()
                 db.refresh(db_camera)
 
-    def get(self, user_id: int):
-        raise NotImplementedError("This method is not yet implemented.")
+    def get(self, user_id: int) -> List[CameraModel]:
+        with get_db() as db:
+            return db.query(CameraModel).filter(CameraModel.user_id == user_id).all()
