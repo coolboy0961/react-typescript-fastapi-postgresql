@@ -1,4 +1,4 @@
-from src.infrastructure.ExternalApiClient import ExternalApiClient
+from src.infrastructure.external_api_client import ExternalApiClient
 
 def test_ExternalApiClientのgetメソッドで情報を取得することができること(requests_mock):
     # Arrange
