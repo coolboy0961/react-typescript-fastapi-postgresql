@@ -3,7 +3,7 @@ import json
 import requests
 from fastapi.encoders import jsonable_encoder
 from src.infrastructure.database import get_db
-from src.interface.gateways.repositories.models.UserModel import UserModel
+from src.interface.gateways.repositories.models.use_model import UserModel
 from src.interface.gateways.repositories.models.camera_model import CameraModel
 from wiremock.client import Mappings, Mapping, MappingRequest, MappingResponse
 

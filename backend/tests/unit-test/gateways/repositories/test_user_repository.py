@@ -2,7 +2,7 @@ import pytest
 from fastapi.encoders import jsonable_encoder
 from pytest_mock import MockFixture
 from src.domain.entities.UserEntity import UserEntity
-from src.interface.gateways.repositories.models.UserModel import UserModel
+from src.interface.gateways.repositories.models.use_model import UserModel
 from src.interface.gateways.repositories.user_repository import UserRepository
 from src.infrastructure.database import get_db
 

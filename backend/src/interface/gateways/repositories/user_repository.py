@@ -1,4 +1,4 @@
-from src.interface.gateways.repositories.models.UserModel import UserModel
+from src.interface.gateways.repositories.models.use_model import UserModel
 from src.infrastructure.database import get_db
 from src.domain.entities.UserEntity import UserEntity
 
