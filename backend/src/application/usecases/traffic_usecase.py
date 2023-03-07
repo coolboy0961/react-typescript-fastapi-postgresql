@@ -1,4 +1,4 @@
-from src.interface.gateways.repositories.CameraRepository import CameraRepository
+from src.interface.gateways.repositories.camera_repository import CameraRepository
 from src.interface.gateways.repositories.UserRepository import UserRepository
 from src.interface.gateways.external_apis.camera_external_api import CameraExternalApi
 
