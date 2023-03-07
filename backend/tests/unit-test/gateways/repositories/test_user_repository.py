@@ -25,3 +25,19 @@ def test_ユーザを登録するリポジトリをコールしてユーザ情�
     # Assert
     assert jsonable_encoder(
         excepted_user_model) == jsonable_encoder(actual_user_modal)
+
+
+def test_ユーザ情報を取得できること(reset_db, mocker: MockFixture):
+    # Arrange
+    excepted_user_model = UserModel(id=1, name="Tom")
+    with get_db() as db:
+        db.add(excepted_user_model)
+        db.commit()
+        db.refresh(excepted_user_model)
+
+    # Act
+    target = UserRepository()
+    actual_user_model = target.get(1)
+
+    # Assert
+    assert actual_user_model == excepted_user_model
