@@ -43,7 +43,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
     Mappings.create_mapping(mapping=mock_camera_api)
 
     # Act
-    response = requests.post("http://localhost:8000/user", headers={"Content-Type": "application/json"}, json={
+    response = requests.post("http://localhost:8000/api/v1/users", headers={"Content-Type": "application/json"}, json={
         "id": 1,
         "name": "Tom",
         "cameras": [
@@ -95,7 +95,7 @@ def test_ユーザと利用するカメラを登録するAPIをコールして�
     Mappings.create_mapping(mapping=mock_camera_api)
 
     # Act
-    response = requests.post("http://localhost:8000/user", headers={"Content-Type": "application/json"}, json={
+    response = requests.post("http://localhost:8000/api/v1/users", headers={"Content-Type": "application/json"}, json={
         "id": 1,
         "name": "Tom",
         "cameras": [
